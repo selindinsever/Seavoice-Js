@@ -1,0 +1,69 @@
+
+.retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    margin-top: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.retro-table thead {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff;
+}
+
+.retro-table th {
+    padding: 20px 24px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.retro-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(2, 132, 199, 0.08);
+    color: #1e293b;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+/* Satır arası modern etkileşim */
+.retro-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.9);
+    cursor: default;
+}
+
+
+.password-cell {
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #64748b;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+
+.btn-delete {
+    display: inline-block;
+    background: #fff1f2;
+    color: #e11d48;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.75rem;
+    border: 1px solid #fecdd3;
+    transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+    background: #e11d48;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+    transform: translateY(-2px);
+}

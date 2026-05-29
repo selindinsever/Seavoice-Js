@@ -1,0 +1,112 @@
+
+.content-body {
+    background: transparent;
+    padding: 20px 0;
+}
+
+
+.table-card {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+
+.section-title {
+    color: #0284c7;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 4px solid #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.retro-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.retro-table thead {
+    background: #0284c7;
+    color: #ffffff;
+}
+
+.retro-table th {
+    padding: 16px;
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.retro-table th:last-child { border-right: none; }
+
+.retro-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+.retro-table td:last-child { border-right: none; }
+
+
+.retro-table tbody tr:hover { 
+    background: #f0f9ff; 
+    transition: 0.2s; 
+}
+
+
+.badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+
+.btn-edit {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn-edit:hover { background: #e2e8f0; }
+
+.btn-delete {
+    background: #fee2e2;
+    color: #e11d48;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.btn-delete:hover { background: #fecaca; }
+
+
+
+.badge-pending { background: #fef3c7; color: #92400e; } /* Yeni mesajlar için sarı */
+.badge-success { background: #d1fae5; color: #065f46; } /* Okunanlar için yeşil */
+
+
+.retro-table td {
+    vertical-align: middle;
+}

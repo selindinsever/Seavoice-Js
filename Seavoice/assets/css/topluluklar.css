@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 15% 20%, #e0f2fe 0%, transparent 55%),
+                radial-gradient(circle at 85% 65%, #bae6fd 0%, transparent 60%),
+                linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+    background-attachment: fixed;
+    color: #1e293b; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+    padding-top: 130px; 
+    padding-bottom: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: 25px;
+}
+
+.page-header h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        to right, 
+        #0284c7 20%, 
+        #38bdf8 40%, 
+        #0ea5e9 60%, 
+        #0284c7 80%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shineWave 6s linear infinite;
+}
+
+.page-header p {
+    color: #475569; 
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    margin: 0;
+}
+
+@keyframes shineWave {
+    to { background-position: 200% center; }
+}
+
+
+
+
+
+#map { 
+    height: 380px;
+    width: 100%; 
+    border-radius: 24px; /* Daha yumuşak modern köşeler */
+    margin-bottom: 30px;
+    border: 1px solid rgba(56, 189, 248, 0.4); 
+    box-shadow: 0 12px 40px rgba(2, 132, 199, 0.05);
+    z-index: 1;
+}
+
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#searchInput {
+    background: rgba(255, 255, 255, 0.65); /* Yazıların jilet gibi okunması için input içi beyaz kaplama */
+    border: 1.5px solid rgba(14, 165, 233, 0.3);
+    color: #0f172a;
+    border-radius: 14px;
+    padding: 12px 18px;
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.25s ease;
+}
+
+#searchInput::placeholder {
+    color: #64748b;
+    opacity: 0.75;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+    background: #ffffff;
+}
+
+#communityList {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 10px 25px;
+    scrollbar-width: thin;
+    scrollbar-color: #38bdf8 rgba(255,255,255,0.2);
+}
+
+.community-card {
+    min-width: 290px; 
+    background: rgba(255, 255, 255, 0.45) !important; 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.community-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background: linear-gradient(90deg, #38bdf8, #0284c7, #38bdf8);
+    background-size: 200% auto;
+    animation: blueStream 6s linear infinite;
+    z-index: 2;
+}
+
+@keyframes blueStream {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(14, 165, 233, 0.4) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.08);
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.1); 
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    color: #0284c7; 
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #475569; 
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.card-text i {
+    color: #38bdf8; 
+}
+
+
+.card-body .btn-join, 
+.card-body .btn-members {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    margin-bottom: 0; 
+}
+
+
+.btn-join {
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+}
+
+.btn-join:hover {
+    box-shadow: 0 6px 18px rgba(14, 165, 233, 0.3);
+    filter: brightness(1.03);
+    transform: translateY(-1px);
+}
+
+.btn-members {
+    background: rgba(14, 165, 233, 0.06);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    color: #0284c7;
+    margin-top: 8px; 
+}
+
+.btn-members:hover {
+    background: rgba(14, 165, 233, 0.12);
+    color: #0369a1;
+    border-color: #0ea5e9;
+}
+
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.85) !important; 
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    border-radius: 24px !important;
+    color: #1e293b !important;
+}
+
+.modal-header h5 {
+    color: #0284c7;
+    font-weight: 700;
+}
+
+.btn-close-white {
+    filter: none !important; 
+}
+
+
+.list-group-item {
+    color: #334155 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.12) !important;
+    padding: 12px 6px !important;
+}
+
+.modal-footer .btn-secondary {
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 600;
+    padding: 8px 24px;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+}
+
+.modal-footer .btn-secondary:hover {
+    filter: brightness(1.03);
+}
+
+@media (max-width: 768px) {
+    .main-container { padding-top: 100px; padding-left: 15px; padding-right: 15px; }
+    .page-header h1 { font-size: 2rem; }
+    #map { height: 300px; }
+}

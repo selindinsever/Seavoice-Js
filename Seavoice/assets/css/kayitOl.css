@@ -1,0 +1,210 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html { 
+    height: 100vh; overflow-y: auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.wrapper {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; width: 100%;
+    background: radial-gradient(circle at 15% 20%, #e0f2fe 0%, transparent 55%),
+                radial-gradient(circle at 85% 65%, #bae6fd 0%, transparent 60%),
+                linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.45); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(56, 189, 248, 0.4); 
+    border-radius: 24px;
+    padding: 2.2rem;
+    width: 90%; max-width: 450px;
+    z-index: 10;
+    box-shadow: 0 12px 40px rgba(2, 132, 199, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #0284c7, #38bdf8);
+    background-size: 200% auto;
+    animation: blueStream 6s linear infinite;
+}
+@keyframes blueStream { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+
+/* FORM ELEMANLARI */
+.row-2 { display: flex; gap: 10px; }
+.row-2 .form-group { flex: 1; }
+
+.logo { width: 150px; margin: 0 auto 1rem auto; display: block; }
+.subtitle { text-align: center; font-size: 11px; color: #475569; margin-bottom: 2rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+.form-group { margin-bottom: 1.2rem; }
+.form-group label {
+    display: block; font-size: 11px; color: #0369a1;
+    margin-bottom: 6px; margin-left: 4px; text-transform: uppercase; font-weight: 800;
+}
+
+.form-group input {
+    width: 100%; padding: 12px 16px;
+    background: #ffffff;
+    border: 1.5px solid rgba(14, 165, 233, 0.3);
+    border-radius: 12px; color: #0f172a; font-size: 14px;
+}
+.form-group input:focus {
+    border-color: #0ea5e9; outline: none; box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+}
+
+.submit-btn {
+    width: 100%; padding: 14px; margin-top: 1rem;
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    color: #fff; border: none; border-radius: 12px;
+    font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+.submit-btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+.yunusInfo { 
+    position: fixed; 
+    bottom: 25px; 
+    right: 25px; 
+    width: 140px; 
+    cursor: pointer; 
+    z-index: 999; 
+    filter: drop-shadow(0 6px 16px rgba(2, 132, 199, 0.25));
+}
+
+.yunus-message {
+    position: fixed; 
+    bottom: 175px; 
+    right: 30px; 
+    width: 320px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    border-radius: 20px; 
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15); 
+    z-index: 998;
+    font-size: 13px; 
+    line-height: 1.5;
+    text-align: left;
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95); 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.yunus-message.active { 
+    display: block !important; 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+    pointer-events: auto;
+}
+
+.yunus-message::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -10px; 
+    right: 55px;
+    border-width: 10px 10px 0; 
+    border-style: solid; 
+    border-color: rgba(255, 255, 255, 0.92) transparent;
+}
+
+.yunus-message p {
+    text-align:center;
+    margin: 0 0 8px 0;
+    color: #334155;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.yunus-message p:first-child { 
+    color: #0284c7; 
+    font-size: 15px; 
+    font-weight: 700; 
+    margin-bottom: 8px;
+}
+
+.yunus-message p:nth-child(2) {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #475569;
+}
+
+.close-btn { 
+    position: absolute; 
+    top: 12px; 
+    right: 15px; 
+    background: none; 
+    border: none; 
+    font-size: 20px; 
+    color: #94a3b8; 
+    cursor: pointer; 
+}
+.close-btn:hover { color: #ef4444; }
+
+
+@media (max-width: 768px) {
+    .yunusInfo {
+        width: 100px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .yunus-message {
+        width: 260px;
+        bottom: 130px; 
+        right: 10px;
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .yunus-message::after {
+        right: 35px;
+    }
+
+    .form-box {
+        padding: 1.5rem;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .yunusInfo { width: 80px; }
+    .yunus-message { width: 220px; bottom: 110px; }
+}
+
+
+
+.bubble {
+    position: fixed;
+    z-index: 1; 
+    background-color: rgba(2, 132, 199, 0.45); 
+    
+    border: 1px solid rgba(2, 132, 199, 0.6);
+    
+    box-shadow: inset -2px -2px 6px rgba(0, 0, 0, 0.1), 
+                inset 2px 2px 6px rgba(255, 255, 255, 0.3), 
+                0 4px 15px rgba(2, 132, 199, 0.2);
+    
+    border-radius: 50%;
+    pointer-events: none;
+    bottom: -100px;
+    animation: rise 12s infinite linear;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) scale(0.4); opacity: 0; }
+    15% { opacity: 0.7; }
+    85% { opacity: 0.7; }
+    100% { transform: translateY(-115vh) scale(1.2); opacity: 0; }
+}
+
+.register-link { text-align: center; margin-top: 1.5rem; font-size: 14px; color: #475569; }
+.register-link a { color: #0284c7; font-weight: 700; text-decoration: none; }

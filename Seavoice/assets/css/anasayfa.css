@@ -1,0 +1,330 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    background: radial-gradient(circle at 10% 20%, #e0f2fe 0%, transparent 50%),
+                radial-gradient(circle at 90% 70%, #bae6fd 0%, transparent 50%),
+                linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+    background-attachment: fixed;
+    color: #1e293b; /* Premium koyu lacivert/gri: Okunabilirliği tavan yaptırır */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.page-content {
+    max-width: 1200px;
+    margin: 120px auto 60px auto; 
+    padding: 0 5%;
+}
+
+.about-section {
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(2, 132, 199, 0.05); 
+    margin-bottom: 40px;
+}
+
+.about-section h1 {
+    color: #0284c7; 
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.about-section .sub-slogan {
+    color: #0369a1; 
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.about-section .about-text {
+    color: #334155; 
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 35px auto;
+}
+
+.cta-container {
+    margin-bottom: 15px;
+}
+
+.vaka-banner-btn {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    text-decoration: none;
+    padding: 24px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.vaka-banner-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
+}
+
+.banner-hashtag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.banner-main-title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.banner-subtext {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.banner-bottom-note {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.live-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    flex: 1;
+    max-width: 280px;
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.03);
+}
+
+.stat-box i {
+    font-size: 32px;
+    color: #0ea5e9; 
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.stat-txt {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.about-cards .card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.about-cards .card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.about-cards .emoji img {
+    height: 50px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.about-cards h3 {
+    color: #0369a1;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.about-cards p {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.yunusInfo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 140px; 
+    height: auto;
+    cursor: pointer;
+    z-index: 999;
+    filter: drop-shadow(0 6px 16px rgba(2, 132, 199, 0.25)); 
+}
+
+.yunusInfo:hover {
+    transform: none !important; 
+}
+
+.yunus-message {
+    position: fixed;
+    bottom: 175px; 
+    right: 30px;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+    z-index: 998;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.yunus-message.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.yunus-message::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 55px; 
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.92) transparent;
+    display: block;
+    width: 0;
+}
+
+.yunus-title {
+    color: #0284c7;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    padding-right: 15px;
+}
+
+.yunus-text {
+    color: #334155;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.btn-close-yunus {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.btn-close-yunus:hover {
+    color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .yunusInfo {
+        width: 100px; 
+        bottom: 20px;
+        right: 20px;
+    }
+    .yunus-message {
+        bottom: 135px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        margin-top: 100px;
+    }
+    
+    .about-section {
+        padding: 30px 20px;
+    }
+    
+    .about-section h1 {
+        font-size: 28px;
+    }
+    
+    .live-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-box {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .yunus-message {
+        width: calc(100% - 40px);
+        left: 20px;
+        right: 20px;
+        bottom: 120px;
+    }
+    
+    .yunus-message::after {
+        right: 45px;
+    }
+}
